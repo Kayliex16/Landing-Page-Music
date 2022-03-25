@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&display=swap');
+
+:root {
+  --text-color: #6A6A6A;
+  --text-gradient: linear-gradient( 45deg,#EC6F66,#F3A183);
+  --border-radius: .5rem;
+  --box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
+  --white-color: #ffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear all;
+}
+
+body{
+    background: var(--white-color);
+}
+
+html {
+    font-size: 65.5%;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+html::-webkit-scrollbar{
+    width: 1rem;
+}
+
+html::-webkit-scrollbar-track{
+    background: var(--white-color);
+}
+
+html::-webkit-scrollbar-thumb{
+    background: var(--text-gradient);
+}
+
+section {
+    padding: 2rem 9%;
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.8;
+}
+
+.home .header {
+   top: 0;
+   left: 0; right: 0;
+   padding: 2rem 9%;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   background: transparent;
+   z-index: 1000;
+   position: fixed;
+}
+
+.home .header .logo {
+   color: transparent;
+   font-size: 3rem;
+   font-weight: bolder;
+   background: var(--text-gradient);
+   background-clip: text;
+   -webkit-background-clip: text;    
+}
+
+.home .header .logo i {
+    color: transparent;
+    background: var(--text-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.home .header .navbar a {
+    color: var(--text-color);
+    font-size: 1.8rem;
+    font-weight: medium;
+    margin-left: 2.5rem;
+}
+
+.home .header .navbar a:hover {
+    color: transparent;
+    background: var(--text-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+#menu-btn {
+    color: var(--white-color);
+    background: var(--text-gradient);
+    font-size: 1.2rem;
+    padding: 1rem 1.3rem;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    display: none;
+}
+
+#menu-btn:hover {
+    color: var(--white-color);
+    background: var(--text-gradient);
+}
+
+.home .content,
+.home .image {
+    flex:  1 1 35rem;
+}
+
+.home .content {
+    line-height: 1.5;
+}
+
+.home .content h3 {
+    color: var(--text-color);
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.home .content h2 {
+    color: transparent;
+    font-size: 3.5rem;
+    font-weight: bolder;
+    background: var(--text-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.home .content p {
+    color: var(--text-color);
+    font-size: 1.7rem;
+}
+
+.home .content .button {
+    color: var(--white-color);
+    font-size: 1.7rem;
+    border-radius: var(--border-radius);
+    background: var(--text-gradient);
+    padding: .5rem 4rem;
+    margin-top: 1rem;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.home .content .button:hover {
+    transition: .2s ease-in;
+    transform: scale(1.1)
+}
+
+.home .image img{
+    width: 100%;
+    margin: 1rem 0;
+}
+
+@media (max-width: 991px) {
+   html {
+       font-size: 55.5%
+   }
+
+   .header {
+       padding: 2rem;
+   }
+
+   section {
+       padding: 2rem;
+   }
+}
+
+@media (max-width: 768px) {
+     #menu-btn {
+       display: initial;
+     }
+
+     .home .header {
+         background: var(--white-color);
+         box-shadow: var(--box-shadow);
+     }
+
+     .home .header .navbar {
+        position: absolute;
+        top: 99%; left: 0; right: 0;
+        background: var(--white-color);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+     }
+
+     .home .header .navbar a {
+        font-size: 1.8rem;
+        margin: 2.5rem 2rem;
+        padding: 1rem;
+        border-radius: var(--border-radius);    
+        display: block;
+    }
+
+    .home .header .navbar a:hover {
+        color: var(--white-color);
+        background: var(--text-gradient);
+    }
+
+    .home .header .navbar.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .home .content {
+        padding: 0 2rem;
+        padding-top: 2.5rem;
+        text-align: center;
+        line-height: 1.5;
+        gap: 1.5;
+    }
+
+    .home .content h3 {
+        margin-top: 3.5rem;
+        font-size: 2.5rem;
+    }
+
+    .home .content h2 {
+        font-size: 4.5rem;
+        text-align: center;
+    }
+
+
+}
+
+@media(max-width: 450px) {
+    html{
+        font-size: 55.5%;
+    }
+
+    .home .content h3 {
+        font-size: 2rem;
+    }
+
+    .home .content h2 {
+        font-size: 2.5rem;
+    }
+
+}
+
+
+
+
